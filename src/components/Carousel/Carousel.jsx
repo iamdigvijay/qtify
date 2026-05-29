@@ -8,13 +8,10 @@ import "swiper/css/navigation";
 function Carousel({ data, renderComponent }) {
   return (
     <div className={styles.wrapper}>
-      
-        <Swiper
-  modules={[Navigation]}
-  navigation
-  
-  spaceBetween={20}
->
+     <Swiper
+        modules={[Navigation]}
+        navigation={true}
+        spaceBetween={20}
         breakpoints={{
           320: {
             slidesPerView: 2,
