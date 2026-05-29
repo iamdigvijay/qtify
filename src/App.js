@@ -8,19 +8,29 @@ import Section from "./components/Section/Section";
 function App() {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const top = await axios.get(
-        "https://qtify-backend.labs.crio.do/albums/top"
-      );
+      try {
+        const top = await axios.get(
+          "https://qtify-backend.labs.crio.do/albums/top"
+        );
 
-      const latest = await axios.get(
-        "https://qtify-backend.labs.crio.do/albums/new"
-      );
+        const latest = await axios.get(
+          "https://qtify-backend.labs.crio.do/albums/new"
+        );
 
-      setTopAlbums(top.data);
-      setNewAlbums(latest.data);
+        const songsResponse = await axios.get(
+          "https://qtify-backend.labs.crio.do/songs"
+        );
+
+        setTopAlbums(top.data);
+        setNewAlbums(latest.data);
+        setSongs(songsResponse.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
@@ -29,6 +39,7 @@ function App() {
   return (
     <>
       <Navbar searchData={[...topAlbums, ...newAlbums]} />
+
       <Hero />
 
       <Section
@@ -39,6 +50,12 @@ function App() {
       <Section
         title="New Albums"
         data={newAlbums}
+      />
+
+      <Section
+        title="Songs"
+        data={songs}
+        type="song"
       />
     </>
   );
