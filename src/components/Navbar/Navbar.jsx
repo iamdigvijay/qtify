@@ -17,7 +17,13 @@ export default function Navbar({ searchData }) {
         searchData={searchData}
       />
 
-      <Button>Give Feedback</Button>
+      <Button
+  sx={{
+    fontFamily: "Poppins, sans-serif",
+  }}
+>
+  Give Feedback
+</Button>
     </nav>
   );
 }
