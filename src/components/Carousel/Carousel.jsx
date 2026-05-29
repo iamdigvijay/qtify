@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 function Carousel({ data, renderComponent }) {
   return (
     <div className={styles.wrapper}>
-      <Swiper
+      
         <Swiper
   modules={[Navigation]}
   navigation
