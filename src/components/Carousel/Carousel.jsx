@@ -10,7 +10,7 @@ function Carousel({ data, renderComponent }) {
     <div className={styles.wrapper}>
       <Swiper
         modules={[Navigation]}
-        navigation
+        navigation={true}
         spaceBetween={20}
         breakpoints={{
           320: {
@@ -25,7 +25,7 @@ function Carousel({ data, renderComponent }) {
         }}
       >
         {data.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.slug}>
             {renderComponent(item)}
           </SwiperSlide>
         ))}
