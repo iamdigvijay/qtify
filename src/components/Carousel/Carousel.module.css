@@ -10,11 +10,12 @@
   justify-content: center !important;
 
   color: white !important;
+
+  pointer-events: auto !important;
+  z-index: 100;
 }
 
-.wrapper :global(.swiper-button-prev::after),
-.wrapper :global(.swiper-button-next::after) {
-  font-size: 10px !important;
-  color: white !important;
-  font-weight: 700 !important;
+.wrapper :global(.swiper-button-prev svg),
+.wrapper :global(.swiper-button-next svg) {
+  pointer-events: auto !important;
 }
