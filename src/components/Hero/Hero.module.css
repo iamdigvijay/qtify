@@ -1,0 +1,20 @@
+.hero {
+  background-color: var(--color-black);
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  color: white;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.hero > div:first-child {
+  text-align: center;
+}

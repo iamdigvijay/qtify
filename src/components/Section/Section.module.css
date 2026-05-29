@@ -1,0 +1,27 @@
+.section {
+    padding: 32px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h3 {
+    color: white;
+  }
+  
+  .toggle {
+    border: none;
+    background: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
